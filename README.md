@@ -42,6 +42,8 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Configuration
 
+# Configuration Parameters
+
 # Data Download
  
 # Data Compression Algorithm

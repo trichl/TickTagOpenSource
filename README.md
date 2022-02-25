@@ -13,11 +13,25 @@ This repository contains the entire production-ready design (hardware, software,
 # IDE for Software Development (Windows)
 * Atmel Studio 7.0
 
+# Using an Arduino Nano for Flashing
+* Follow the instructions on https://github.com/ElTangas/jtag2updi
+* The 4.7k resistor is already integrated on the user interface board
+* Alternatively software can be flashed with the official Atmel-ICE: https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
+
 # Flashing the Firmware
+* Connect the TickTag WITHOUT battery to the user interface board
+* Double check the jumper locations on the user interface board !!!PHOTO!!!
+* Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE)
+* Connect the USB cable to a computer, connect the Arduino Nano to the same computer
+* Slide the UPDI button on the user interface board to ON
+* 
+
+
+# Tag Assembly
 
 # Configuration
 
-# Tag Assembly
+# Data Download
  
 # Data Compression Algorithm
 

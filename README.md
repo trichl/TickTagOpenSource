@@ -10,13 +10,16 @@ This repository contains the entire production-ready design (hardware, software,
    * REV3: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
    * REV4: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
 
-# Software development
+# IDE for Software Development (Windows)
+* Atmel Studio 7.0
 
-# Programming
+# Flashing the Firmware
 
 # Configuration
+
+# Tag Assembly
  
-# Data compression algorithm
+# Data Compression Algorithm
 
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).
 

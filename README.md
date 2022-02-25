@@ -15,30 +15,33 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Using an Arduino Nano for Flashing
 * Follow the instructions on https://github.com/ElTangas/jtag2updi
-* The 4.7k resistor is already integrated on the user interface board
+* The 4.7k resistor is already integrated on the user interface board and does not need to be added
 * Alternatively software can be flashed with the official Atmel-ICE: https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
 
 # Flashing the Firmware
 * Connect the TickTag WITHOUT battery to the user interface board
 * Double check the jumper locations on the user interface board !!!PHOTO!!!
-* Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE)
-* Connect the USB cable to a computer, connect the Arduino Nano to the same computer
+* Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE instead of Arduino Nano)
+* Connect the user interface board to a computer, connect the Arduino Nano to the same computer
 * Slide the UPDI button on the user interface board to ON
 * Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
 * Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
-* Open Atmel Studio 7.0 and load the project [TickTagSoftware](TickTagSoftware) for the regular firmware or [TickTagSoftwareBurst](TickTagSoftwareBurst) for the firmware capable of burst recording GPS fixes
-* Configure the ATTINY programming under Tools -> External Tools: !!!PHOTO!!!
+* Open Atmel Studio 7.0 and load the project [TickTagSoftware](TickTagSoftware) for the regular firmware or [TickTagSoftwareBurst](TickTagSoftwareBurst) for the firmware capable of burst-recording GPS fixes
+* Configure the ATTINY programming via Arduino Nano under Tools -> External Tools: !!!PHOTO!!!
 * Press F7 to compile the firmware
 * Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 
 # Tag Assembly
-* If the firmware is flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
-* You can use a glass fiber pen to roughen the LiPo pads, which makes soldering more easy
+* If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
+* You can use a glass fiber pen to roughen the LiPo pads, which makes soldering more easy (e.g., Laeufer 69119)
 * Keep the soldering work on the LiPo very short, otherwise the battery might be damaged
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
 # Charge battery
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
+* Disconnect the UPDI pin from the Arduino Nano
+
+# Activation
 
 # Configuration
 

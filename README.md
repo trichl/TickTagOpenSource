@@ -52,6 +52,17 @@ This repository contains the entire production-ready design (hardware, software,
    * If it doesn’t blink at all: battery voltage might be low or the tag is already activated
    * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from 1
    * The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Configuration")
+* Activation option 2: on breakout board: !!!PHOTO!!!
+   * Locate the click connector on the tag (red circle): !!!PHOTO!!!
+   * Take a look at the breakout board, do not connect the USB power connector (no external power needed for activation): !!!PHOTO!!!
+   * Gently and carefully click the tag on the breakout board where you see the connector counterpart (red tag outline in the photo above)
+      * Take care of the correct orientation of the tag as shown in the photo, otherwise a short circuit might permanently damage the tag
+   * Now press the white button (red circle in photo above) for 2 seconds until the tag starts to blink
+      * Do not press the button longer than some seconds
+      * The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
+      * The green LED is located on the back side of the tag, so it’s best to hold the breakout board sideways to see the blinking LED under the tag
+      * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from 1
+   * The tag is activated and will start sampling GPS data after 30 seconds (default configuration, can be changed)
 
 # Charge battery
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently

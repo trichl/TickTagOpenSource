@@ -33,9 +33,25 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Tag Assembly
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
-* You can use a glass fiber pen to roughen the LiPo pads, which makes soldering more easy (e.g., Laeufer 69119)
-* Keep the soldering work on the LiPo very short, otherwise the battery might be damaged
+* You can use a glass fiber pen to roughen the LiPo pads, which makes soldering more easy (e.g., with a Laeufer 69119 pen)
+* Keep the soldering work on the LiPo very short, otherwise the battery might be damaged due to high temperatures
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
+
+# Activation
+* Prerequisites
+   * The tags need to be connected to a charged lithium polymer battery (plus and minus pads on the tag are soldered to the battery)
+   * If the battery voltage is too low, the tag won’t start (please charge the battery), see chapter "Charge Battery"
+   * If the data memory is full, the tag won't start (please download the data and reset the memory), see chapter "Data Download and Memory Reset"
+   * No battery protection circuit is needed, the battery is protected by software
+   * Check the location of the green LED on the tag (it will give you feedback): !!!PHOTO!!!
+* Activation option 1: by a wire: !!!PHOTO!!!
+   * Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to (red circle on the left)
+   * Gently touch with the other end of the wire the hole marked with "A" (or "ST") (red circle on the right)
+   * Once the tag starts blinking green, remove the wire immediately (should not take longer than 2 seconds)
+   * The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
+   * If it doesn’t blink at all: battery voltage might be low or the tag is already activated
+   * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from 1
+   * The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Configuration")
 
 # Charge battery
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
@@ -45,17 +61,17 @@ This repository contains the entire production-ready design (hardware, software,
 * Connect the USB connector to a computer or power source (red LED on breakout board turns on)
 * Turn the charge slide button (red rectangle in photo above) to the left
 * A green LED on the breakout board turns on and indicates that the battery is being charged
-* In case the tag was activated
+* In case the tag was previously activated, it first needs to be deactivated:
    * Wait some minutes until battery is charged a bit
    * Press the white button for 5 seconds to restart the tag
    * Green LED on the tag will blink 5 times to indicate download mode and system restart
-   * Wait until the green LED turns off (battery charged)
-   * This can take hours (charge current: 15mA)
+* Wait until the green LED turns off (battery charged)
+   * This can take hours (default charge current: 15 mA)
    * For example: an empty 30 mAh lipo battery needs 2 hours to be fully charged
    * For example an empty 120 mAh lipo battery needs 8 hours to be fully charged
-   * The tag can be activated again (see chapter 2 and 3)
+   * The tag can be activated again (see chapter "Activation")
 
-# Activation
+
 
 # Configuration
 

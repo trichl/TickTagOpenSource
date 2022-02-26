@@ -11,7 +11,7 @@ This repository contains the entire production-ready design (hardware, software,
    * REV4: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
 
 # IDE for Software Development (Windows)
-* Atmel Studio 7.0
+* Atmel Studio 7.0: https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
 
 # Using an Arduino Nano for Flashing
 * Follow the instructions on https://github.com/ElTangas/jtag2updi
@@ -39,7 +39,21 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Charge battery
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
-* Disconnect the UPDI pin from the Arduino Nano
+* The battery can be recharged directly on the breakout board: !!!PHOTO!!!
+* Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
+* Gently click the tag on the breakout board (with battery attached to it)
+* Connect the USB connector to a computer or power source (red LED on breakout board turns on)
+* Turn the charge slide button (red rectangle in photo above) to the left
+* A green LED on the breakout board turns on and indicates that the battery is being charged
+* In case the tag was activated
+   * Wait some minutes until battery is charged a bit
+   * Press the white button for 5 seconds to restart the tag
+   * Green LED on the tag will blink 5 times to indicate download mode and system restart
+   * Wait until the green LED turns off (battery charged)
+   * This can take hours (charge current: 15mA)
+   * For example: an empty 30 mAh lipo battery needs 2 hours to be fully charged
+   * For example an empty 120 mAh lipo battery needs 8 hours to be fully charged
+   * The tag can be activated again (see chapter 2 and 3)
 
 # Activation
 

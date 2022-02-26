@@ -2,7 +2,7 @@
  
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 
-# Hardware Layouts
+# Hardware Production
 * See sub folder [TickTagHardware](TickTagHardware)
 * Schematics (.sch) and boards (.brd) are designed in Autodesk Eagle 9.5.2
 * PCBs were produced and assembled by [PCBWay](https://www.pcbway.com) (production-ready Gerber files and PCBWay settings in [TickTagHardware/GerberProductionFiles](TickTagHardware/GerberProductionFiles))
@@ -37,6 +37,28 @@ This repository contains the entire production-ready design (hardware, software,
 * Keep the soldering work on the LiPo very short, otherwise the battery might be damaged due to high temperatures
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
+# Charging the Battery
+* WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
+* The battery can be recharged directly on the breakout board: !!!PHOTO!!!
+* Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
+* Gently click the tag on the breakout board (with battery attached to it), mind the correct orientation of the tag
+* Connect the USB connector to a computer or power source (red LED on breakout board turns on)
+* Turn the charge slide button (red rectangle in photo above) to the left
+* A green LED on the breakout board turns on and indicates that the battery is being charged
+* In case the tag was previously activated, it first needs to be deactivated:
+   * Wait some minutes until battery is charged a bit
+   * Press the white button for 5 seconds to restart the tag
+   * Green LED on the tag will blink 5 times to indicate download mode and system restart
+* Wait until the green LED turns off (battery charged)
+   * This can take hours (default charge current: 15 mA)
+   * For example: an empty 30 mAh lipo battery needs 2 hours to be fully charged
+   * For example an empty 120 mAh lipo battery needs 8 hours to be fully charged
+   * The tag can be activated again (see chapter "Activation")
+
+# Configuration
+
+# Configuration Parameters
+
 # Activation
 * Prerequisites
    * The tags need to be connected to a charged lithium polymer battery (plus and minus pads on the tag are soldered to the battery)
@@ -65,31 +87,6 @@ This repository contains the entire production-ready design (hardware, software,
    * The tag is activated and will start sampling GPS data after 30 seconds (default configuration, can be changed)
 
 # After the Activation (Data Sampling)
-
-
-# Charging the Battery
-* WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
-* The battery can be recharged directly on the breakout board: !!!PHOTO!!!
-* Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
-* Gently click the tag on the breakout board (with battery attached to it), mind the correct orientation of the tag
-* Connect the USB connector to a computer or power source (red LED on breakout board turns on)
-* Turn the charge slide button (red rectangle in photo above) to the left
-* A green LED on the breakout board turns on and indicates that the battery is being charged
-* In case the tag was previously activated, it first needs to be deactivated:
-   * Wait some minutes until battery is charged a bit
-   * Press the white button for 5 seconds to restart the tag
-   * Green LED on the tag will blink 5 times to indicate download mode and system restart
-* Wait until the green LED turns off (battery charged)
-   * This can take hours (default charge current: 15 mA)
-   * For example: an empty 30 mAh lipo battery needs 2 hours to be fully charged
-   * For example an empty 120 mAh lipo battery needs 8 hours to be fully charged
-   * The tag can be activated again (see chapter "Activation")
-
-
-
-# Configuration
-
-# Configuration Parameters
 
 # Data Download and Memory Reset
 

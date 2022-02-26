@@ -41,7 +41,7 @@ This repository contains the entire production-ready design (hardware, software,
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
 * The battery can be recharged directly on the breakout board: !!!PHOTO!!!
 * Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
-* Gently click the tag on the breakout board (with battery attached to it)
+* Gently click the tag on the breakout board (with battery attached to it), mind the correct orientation of the tag
 * Connect the USB connector to a computer or power source (red LED on breakout board turns on)
 * Turn the charge slide button (red rectangle in photo above) to the left
 * A green LED on the breakout board turns on and indicates that the battery is being charged
@@ -61,7 +61,9 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Configuration Parameters
 
-# Data Download
+# Data Download and Memory Reset
+
+# State Machine
  
 # Data Compression Algorithm
 

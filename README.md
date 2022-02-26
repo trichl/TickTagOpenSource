@@ -64,7 +64,10 @@ This repository contains the entire production-ready design (hardware, software,
       * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from 1
    * The tag is activated and will start sampling GPS data after 30 seconds (default configuration, can be changed)
 
-# Charge battery
+# After the Activation (Data Sampling)
+
+
+# Charging the Battery
 * WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
 * The battery can be recharged directly on the breakout board: !!!PHOTO!!!
 * Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above

@@ -11,7 +11,7 @@ This repository contains the entire production-ready design (hardware, software,
    * REV4: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
    * User interface board: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4
-   * 0.2 mm PCB instead of 0.15 mm (more stable)
+   * 0.2 mm PCB instead of 0.15 mm (more robust)
    * PCB slots instead of pads for soldering LiPos
    * New load switch (SiP32431DNP3-T1GE4), as the old load switch has long lead times
    * Reduced the footprints of some of the capacitors and resistors from 0402 to 0201
@@ -65,10 +65,10 @@ This repository contains the entire production-ready design (hardware, software,
 # Configuration
 
 # Configuration Parameters
-* Read memory: displaying all stored GPS fixes as list (timestamp in UTC, latitude, longitude)
+* Read memory: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
 * Reset memory: all stored GPS fixes are deleted
 * Shutdown voltage (3000 - 4250, in mV): Open-circuit voltage (no load) when the TickTag shall stop recording GPS data
-* Frequency (1 - 16382, in s): GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered in fitness low power mode
+* Frequency (1 - 16382, in s): GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered and puts the device in fitness low power mode
 * Accuracy (1 - 255, HDOP x 10): HDOP value that tries to be achieved within 9 seconds after getting the first positional estimate
 * Activation delay (10 - 16382, in s): Delay after activation before the tag starts recording data
 * On time (0000 - 2359, in min within day): Daily recording time window
@@ -103,6 +103,12 @@ This repository contains the entire production-ready design (hardware, software,
    * The tag is activated and will start sampling GPS data after 30 seconds (default configuration, can be changed)
 
 # After the Activation (Data Sampling)
+* After the activation delay, the tag starts blinking green every second and tries to get the current time via GPS satellites. If it can’t obtain the time within 120 seconds, it will sleep for 15 minutes and will try again.
+   * IMPORTANT: If blinking configuration is set to false the tag will completely stop blinking at all after getting the current UTC time
+   * If you have configured the tag to only sample GPS at certain times:
+       * IMPORTANT: Before attaching the tag to the animal (e.g., the day before): go outside, activate the tag, wait until it starts blinking, wait until the green LED stays on for 2 seconds (tag got the time and went to sleep mode).
+* The tag samples GPS data (continuously or from time to time, depending on the configuration)
+* The module deactivates itself if the battery voltage is low (default configuration: 3.3V) or if the memory is full (maximum 13,100 fixes)
 
 # Data Download and Memory Reset
 

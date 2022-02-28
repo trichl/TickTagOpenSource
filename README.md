@@ -25,18 +25,19 @@ This repository contains the entire production-ready design (hardware, software,
 * Alternatively software can be flashed with the official Atmel-ICE: https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
 
 # Flashing the Firmware
-* Flashing should be done before soldering a battery to the tag
-* Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
-* Double check the jumper locations on the user interface board !!!PHOTO!!!
-* Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE instead of an Arduino Nano)
-* Connect the user interface board to a computer, connect the Arduino Nano to the same computer
-* Slide the UPDI button on the user interface board to ON
-* Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
-* Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
-* Open Atmel Studio 7.0 and load the project [TickTagSoftware](TickTagSoftware) for the regular firmware or [TickTagSoftwareBurst](TickTagSoftwareBurst) for the firmware capable of burst-recording GPS fixes
-* Configure the ATTINY programming via Arduino Nano under Tools -> External Tools: !!!PHOTO!!!
-* Press F7 to compile the firmware
-* Press Tools -> jtag2updi ATtiny1626 to flash the firmware
+Flashing should be done before soldering a battery to the tag
+
+1. Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
+2. Double check the jumper locations on the user interface board !!!PHOTO!!!
+3. Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE instead of an Arduino Nano)
+4. Connect the user interface board to a computer, connect the Arduino Nano to the same computer
+5. Slide the UPDI button on the user interface board to ON
+6. Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
+7. Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
+8. Open Atmel Studio 7.0 and load the project [TickTagSoftware](TickTagSoftware) for the regular firmware or [TickTagSoftwareBurst](TickTagSoftwareBurst) for the firmware capable of burst-recording GPS fixes
+9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools: !!!PHOTO!!!
+10. Press F7 to compile the firmware
+11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 
 # Tag Assembly
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
@@ -132,16 +133,17 @@ This repository contains the entire production-ready design (hardware, software,
 * **Frequency (1 - 16382, in s)**: GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered and puts the device in fitness low power mode
 * **Accuracy (1 - 255, HDOP x 10)**: HDOP value that tries to be achieved within 9 seconds after getting the first positional estimate
 * **Activation delay (10 - 16382, in s)**: Delay after activation before the tag starts recording data
-* **On time (0000 - 2359, in min within day)**: Daily recording time window
+* **On- and off-time (0000 - 2359, in min within day)**: Daily recording time window
 * **Geo-fencing (true/false)**: When activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
 * **Blinking (true/false)**: When activated the tag blinks every second when GPS is active
  
 # Android App
+* Developed in Android Studio 3.5.1: https://developer.android.com/studio
 
 # State Machine
+!!!PHOTO!!!
 
 # Data Compression Algorithm
-
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).
 
 * **Latitute (A)**: stored in 25 Bit (unsigned): compressedLatitude = (latitude * 100000) + 9000000

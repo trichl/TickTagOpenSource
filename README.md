@@ -2,7 +2,7 @@
  
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 
-# Hardware Production
+## Hardware Production
 * See sub folder [TickTagHardware](TickTagHardware)
 * Schematics (.sch) and boards (.brd) are designed in Autodesk Eagle 9.5.2
 * PCBs were produced and assembled by [PCBWay](https://www.pcbway.com) (production-ready Gerber files and PCBWay settings in [TickTagHardware/GerberProductionFiles](TickTagHardware/GerberProductionFiles))

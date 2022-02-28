@@ -79,27 +79,28 @@ Flashing should be done before soldering a battery to the tag.
    * If the battery voltage is too low, the tag won’t start (please charge the battery), see chapter "Charge Battery"
    * If the data memory is full, the tag won't start (please download the data and reset the memory), see chapter "Data Download, Configuration and Memory Reset"
    * Check the location of the green LED on the tag (it will give you visual feedback): !!!PHOTO!!!
-* **Activation option 1: by a wire**: !!!PHOTO!!!
-   * Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to (red circle on the left)
-   * Gently touch with the other end of the wire the hole marked with "A" (or "ST") (red circle on the right)
-   * Once the tag starts blinking green, remove the wire immediately (should not take longer than 2 seconds)
-   * The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
-   * The green LED is located on the back side of the tag, so it's best to hold the breakout board sideways to see the blinking LED under the tag
-   * If it doesn’t blink at all: battery voltage might be low or the tag is already activated
-   * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
-   * The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
-* **Activation option 2**: on breakout board: !!!PHOTO!!!
-   * Locate the click connector on the tag (red circle): !!!PHOTO!!!
-   * Take a look at the breakout board, do not connect the USB power connector to the computer or phone (no external power needed for activation): !!!PHOTO!!!
-   * Gently and carefully click the tag on the breakout board where you see the connector counterpart (red tag outline in the photo above)
+
+### Activation option 1: by a wire: !!!PHOTO!!!
+1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to (red circle on the left)
+2. Gently touch with the other end of the wire the hole marked with "A" (or "ST") (red circle on the right)
+3. Once the tag starts blinking green, remove the wire immediately (should not take longer than 2 seconds)
+4. The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
+5. The green LED is located on the back side of the tag, so it's best to hold the breakout board sideways to see the blinking LED under the tag
+6. If it doesn’t blink at all: battery voltage might be low or the tag is already activated
+7. If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
+8. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
+### Activation option 2: on breakout board: !!!PHOTO!!!
+1. Locate the click connector on the tag (red circle): !!!PHOTO!!!
+2. Take a look at the breakout board, do not connect the USB power connector to the computer or phone (no external power needed for activation): !!!PHOTO!!!
+3. Gently and carefully click the tag on the breakout board where you see the connector counterpart (red tag outline in the photo above)
       * Take care of the correct orientation of the tag as shown in the photo, otherwise a short circuit might permanently damage the tag
-   * Now press the white button (red circle in photo above) for two seconds until the tag starts to blink
+4. Now press the white button (red circle in photo above) for two seconds until the tag starts to blink
       * Do not press the button longer than some seconds
       * The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
       * The green LED is located on the back side of the tag, so it's best to hold the breakout board sideways to see the blinking LED under the tag
       * If it doesn’t blink at all: battery voltage might be low or the tag is already activated
       * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
-   * The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
+5. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
 
 ## After the Activation (Data Sampling)
 * After the activation delay, the tag starts blinking green every second and tries to get the current time via GPS satellites. If it can’t obtain the time within 120 seconds, it will sleep for 15 minutes and will try again.

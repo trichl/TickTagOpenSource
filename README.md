@@ -2,7 +2,7 @@
  
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 
-## Hardware Production
+# Hardware Production
 * See sub folder [TickTagHardware](TickTagHardware)
 * Schematics (.sch) and boards (.brd) are designed in Autodesk Eagle 9.5.2
 * PCBs were produced and assembled by [PCBWay](https://www.pcbway.com) (production-ready Gerber files and PCBWay settings in [TickTagHardware/GerberProductionFiles](TickTagHardware/GerberProductionFiles))
@@ -16,16 +16,21 @@ This repository contains the entire production-ready design (hardware, software,
    * New load switch (SiP32431DNP3-T1GE4), as the old load switch has long lead times
    * Reduced the footprints of some of the capacitors and resistors from 0402 to 0201
 
-# IDE for Software Development (Windows)
+# Programming and Assembly
+
+## IDE for Software Development (Windows)
 * Atmel Studio 7.0: https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
 * Programming language: C / C++
 
-# Using an Arduino Nano for Flashing
+## Android App
+* Developed in Android Studio 3.5.1: https://developer.android.com/studio
+
+## Using an Arduino Nano for Flashing
 * Follow the instructions on https://github.com/ElTangas/jtag2updi
 * The 4.7k resistor is already integrated on the user interface board and does not need to be added
 * Alternatively software can be flashed with the official Atmel-ICE: https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
 
-# Flashing the Firmware
+## Flashing the Firmware
 Flashing should be done before soldering a battery to the tag.
 
 1. Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
@@ -40,13 +45,15 @@ Flashing should be done before soldering a battery to the tag.
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 
-# Tag Assembly
+## Tag Assembly
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
 * You can use a glass fiber pen to roughen the LiPo tabs, which makes soldering of the aluminium tabs more easy (e.g., with a Laeufer 69119 pen)
 * Keep the soldering work on the LiPo very short, otherwise the battery might be damaged due to high temperatures
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
-# Charging the Battery
+# Tag Manual
+
+## Charging the Battery
 **WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board: !!!PHOTO!!!
 
 1. Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
@@ -65,7 +72,7 @@ Flashing should be done before soldering a battery to the tag.
 8. The tag can be activated again (see chapter "Activation")
    * Warning: If the memory is full the tag can not be reactivated (data download necessary, see next chapter)
 
-# Activation
+## Activation
 * Prerequisites
    * The tags need to be connected to a charged lithium polymer battery (plus and minus pads on the tag are soldered to the battery)
    * If the battery voltage is too low, the tag won’t start (please charge the battery), see chapter "Charge Battery"
@@ -92,7 +99,7 @@ Flashing should be done before soldering a battery to the tag.
       * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from 1
    * The tag is activated and will start sampling GPS data after 30 seconds (default configuration, can be changed)
 
-# After the Activation (Data Sampling)
+## After the Activation (Data Sampling)
 * After the activation delay, the tag starts blinking green every second and tries to get the current time via GPS satellites. If it can’t obtain the time within 120 seconds, it will sleep for 15 minutes and will try again.
    * **IMPORTANT**: If blinking configuration is set to false the tag will completely stop blinking at all after getting the current UTC time
    * If you have configured the tag to only sample GPS at certain times:
@@ -100,14 +107,14 @@ Flashing should be done before soldering a battery to the tag.
 * The tag samples GPS data (continuously or from time to time, depending on the configuration)
 * The module deactivates itself if the battery voltage is low (default configuration: 3.3V) or if the memory is full (maximum 13,100 fixes)
 
-# On-Animal Mounting
+## On-Animal Mounting
 * **IMPORTANT**: The small antenna of the TickTag is disturbed by any electrically conducting material nearby, so keep the antenna away from other tags, VHF/UHF tags, batteries, screws or similar materials (at least 5 cm).
 * **IMPORTANT**: The antenna can easily break if bent too strong. Try to protect the antenna with a 3D-printed housing (for example with ASA material).
 * **IMPORTANT**: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
 * **IMPORTANT**: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky: !!!PHOTO!!!
 * **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (blu-tack works fine): !!!PHOTO!!!
 
-# Data Download, Configuration and Memory Reset
+## Data Download, Configuration and Memory Reset
 !!!PHOTO!!!
 1. Choose a serial software
    * **Option 1**: Download a serial program for your computer
@@ -176,7 +183,7 @@ SETTINGS:
 -------------------
 ```
 
-# Configuration Parameters
+## Configuration Parameters
 * **Read memory**: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
 * **Reset memory**: all stored GPS fixes are deleted
 * **Shutdown voltage (3000 - 4250, in mV)**: Open-circuit voltage (no load) when the TickTag shall stop recording GPS data
@@ -186,11 +193,8 @@ SETTINGS:
 * **On- and off-time (0000 - 2359, in min within day)**: Daily recording time window
 * **Geo-fencing (true/false)**: When activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
 * **Blinking (true/false)**: When activated the tag blinks every second when GPS is active
- 
-# Android App
-* Developed in Android Studio 3.5.1: https://developer.android.com/studio
 
-# State Machine
+## State Machine
 !!!PHOTO!!!
 
 # Data Compression Algorithm

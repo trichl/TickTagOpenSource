@@ -1,8 +1,7 @@
-
+<img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png" width="100">
 
 # I Repository Introduction
- 
-<img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png" width="100"> This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
+This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 
 # II Hardware Production
 * See sub folder [TickTagHardware](TickTagHardware)

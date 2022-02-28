@@ -173,6 +173,10 @@ SETTINGS:
 -------------------
 ```
 
+12. In the command line of your serial program enter "1" and press return to reset the memory (when using the Android app: press the “Reset memory” button”)
+13. The tag will confirm that the memory is now empty
+14. The tag will restart into the activation state after some time (waiting on tag activation, see activation chapter)
+
 # Configuration Parameters
 * **Read memory**: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
 * **Reset memory**: all stored GPS fixes are deleted

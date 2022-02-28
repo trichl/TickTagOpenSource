@@ -16,7 +16,7 @@ This repository contains the entire production-ready design (hardware, software,
    * New load switch (SiP32431DNP3-T1GE4), as the old load switch has long lead times
    * Reduced the footprint sizes of some of the capacitors and resistors from 0402 to 0201
 
-# Programming and Assembly
+# III Programming and Assembly
 
 ## IDE for Software Development (Windows)
 * Atmel Studio 7.0: https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
@@ -52,7 +52,7 @@ Flashing should be done before soldering a battery to the tag.
 * Keep the soldering work on the LiPo very short, otherwise the battery might be damaged due to high temperatures
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
-# Tag Manual
+# IV Tag Manual
 
 ## Charging the Battery
 **WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board: !!!PHOTO!!!
@@ -202,7 +202,7 @@ SETTINGS:
 ## State Machine
 !!!PHOTO!!!
 
-# Data Compression Algorithm
+# V Data Compression Algorithm
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).
 
 * **Latitute (A)**: stored in 25 Bit (unsigned): compressedLatitude = (latitude * 100000) + 9000000

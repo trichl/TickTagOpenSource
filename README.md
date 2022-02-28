@@ -18,6 +18,7 @@ This repository contains the entire production-ready design (hardware, software,
 
 # IDE for Software Development (Windows)
 * Atmel Studio 7.0: https://www.microchip.com/en-us/tools-resources/develop/microchip-studio
+* Programming language: C / C++
 
 # Using an Arduino Nano for Flashing
 * Follow the instructions on https://github.com/ElTangas/jtag2updi
@@ -46,23 +47,23 @@ Flashing should be done before soldering a battery to the tag
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
 # Charging the Battery
-* **WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
-* The battery can be recharged directly on the breakout board: !!!PHOTO!!!
-* Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
-* Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
-* Connect the USB connector to a computer or power source (red LED on breakout board turns on)
-* Turn the charge slide button (red rectangle in photo above) to the left
-* A green LED on the breakout board turns on and indicates that the battery is being charged
-* In case the tag was previously activated, it first needs to be deactivated:
+**WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board: !!!PHOTO!!!
+
+1. Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
+2. Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
+3. Connect the USB connector to a computer or power source (red LED on breakout board turns on)
+4. Turn the charge slide button (red rectangle in photo above) to the left
+5. A green LED on the breakout board turns on and indicates that the battery is being charged
+6. In case the tag was previously activated, it first needs to be deactivated:
    * Wait some minutes until battery is charged a bit
    * Press the white button for 5 seconds to restart the tag and enter menue
    * Green LED on the tag will blink 5 times to indicate download mode and system restart
-* Wait until the green LED turns off (battery charged)
+7. Wait until the green LED turns off (battery charged)
    * This can take hours (default charge current: 15 mA)
    * For example: an empty 30 mAh lipo battery needs 2 hours to be fully charged
    * For example an empty 120 mAh lipo battery needs 8 hours to be fully charged
-* The tag can be activated again (see chapter "Activation")
-* Warning: If the memory is full the tag can not be reactivated (data download necessary, see next chapter)
+8. The tag can be activated again (see chapter "Activation")
+   * Warning: If the memory is full the tag can not be reactivated (data download necessary, see next chapter)
 
 # Activation
 * Prerequisites

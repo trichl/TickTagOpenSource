@@ -131,7 +131,7 @@ Flashing should be done before soldering a battery to the tag.
 10. Data download is shown in your serial program (in CSV format)
 11. After the download the tag shows a little menu for configuration
        * Data download might take some minutes (if memory is full)
-* Data download can be interrupted by pressing the download button once (short), data will not be deleted
+       * Data download can be interrupted by pressing the download button once (short), data will not be deleted
 12. In the command line of your serial program enter "1" and press return to reset the memory (when using the Android app: press the “Reset memory” button”)
 13. The tag will confirm that the memory is now empty
 14. The tag will restart into the activation state after some time (waiting on tag activation, see activation chapter)

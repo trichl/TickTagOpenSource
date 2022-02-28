@@ -1,4 +1,4 @@
-# I TickTagOpenSource
+# I Repository Introduction
  
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 

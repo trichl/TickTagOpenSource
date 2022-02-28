@@ -107,7 +107,7 @@ This repository contains the entire production-ready design (hardware, software,
 
 # Data Download, Configuration and Memory Reset
 1. Choose a serial software
-a. Option 1: Download a serial program for your computerf
+* Option 1: Download a serial program for your computer
 i. For example (Windows 10): Termite
 https://www.compuphase.com/software_termite.htm
 ii. For example (Windows 10): MobaXTerm

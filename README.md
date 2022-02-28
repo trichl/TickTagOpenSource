@@ -106,15 +106,15 @@ This repository contains the entire production-ready design (hardware, software,
 * IMPORTANT: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (blu-tack works fine): !!!PHOTO!!!
 
 # Data Download, Configuration and Memory Reset
+!!!PHOTO!!!
 1. Choose a serial software
 * Option 1: Download a serial program for your computer
-i. For example (Windows 10): Termite
-https://www.compuphase.com/software_termite.htm
-ii. For example (Windows 10): MobaXTerm
-https://mobaxterm.mobatek.net/
-iii. The Arduino Serial Monitor also works fine
-b. Option 2: Use the TickTag Android app and an USB OTG adapter to connect
-the breakout board with the phone
+   * For example (Windows 10): Termite: https://www.compuphase.com/software_termite.htm
+   * !!!PHOTO!!!
+   * For example (Windows 10): MobaXTerm: https://mobaxterm.mobatek.net/
+   * !!!PHOTO!!!
+   * The Arduino Serial Monitor also works fine
+* Option 2: Use the TickTag Android app and an USB OTG adapter to connect the breakout board with the phone
 2. The battery needs to be connected to the tag
 3. Check if the jumper settings are like in the picture above (B, C, E)
 4. Gently and very carefully click the tag on the breakout board (A)
@@ -122,10 +122,10 @@ the breakout board with the phone
 breakout board turns on)
 6. Turn the charge slide button (F) to the left to charge the battery while downloading
 data (not mandatory, but recommended)
-7. For Option 1: Open the serial program on your computer with following settings
-a. COM port: select the CP2104N COM port from the list
-b. Baud rate: 9600
-c. Default serial settings (8 data bits, 1 stop bit, no parity)
+7. For option 1: Open the serial program on your computer with following settings:
+* COM port: select the CP2104N COM port from the list
+* Baud rate: 9600
+* Default serial settings (8 data bits, 1 stop bit, no parity)
 
 # Configuration Parameters
 * Read memory: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)

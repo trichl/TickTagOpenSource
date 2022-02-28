@@ -1,8 +1,8 @@
-# TickTagOpenSource
+# I TickTagOpenSource
  
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.
 
-# Hardware Production
+# II Hardware Production
 * See sub folder [TickTagHardware](TickTagHardware)
 * Schematics (.sch) and boards (.brd) are designed in Autodesk Eagle 9.5.2
 * PCBs were produced and assembled by [PCBWay](https://www.pcbway.com) (production-ready Gerber files and PCBWay settings in [TickTagHardware/GerberProductionFiles](TickTagHardware/GerberProductionFiles))
@@ -40,7 +40,7 @@ Flashing should be done before soldering a battery to the tag.
 5. Slide the UPDI button on the user interface board to ON
 6. Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
 7. Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
-8. Open Atmel Studio 7.0 and load the project [TickTagSoftware](TickTagSoftware) for the regular firmware or [TickTagSoftwareBurst](TickTagSoftwareBurst) for the firmware capable of burst-recording GPS fixes
+8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)
 9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools: !!!PHOTO!!!
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
@@ -150,9 +150,9 @@ Example data output of the serial program (or Android app):
 
 ```
 ---TICK-TAG---
-***START MEMORY***
+*START MEMORY*
 UVs: 0, TOs: 0/0, ErrorsOrGF: 0, TTFF: 0
-Fixes: 10, Avg. time to fix: 11 s, Avg. HDOP (x10): 16
+Fixes: 10, Avg. TTF: 11 s, Avg. HDOP (x10): 16
 count,timestamp,lat,lon
 1,1635235981,47.74340,8.99910
 2,1635236130,47.74346,8.99922
@@ -164,38 +164,40 @@ count,timestamp,lat,lon
 8,1635238411,47.74329,8.99883
 9,1635238511,47.74332,8.99878
 10,1635238610,47.74325,8.99881
-***END MEMORY***
-V108, ID: 30-2509, 3533mV, 01b
+*END MEMORY*
+V201, ID: 30-2509, 3533mV, 01b
 SETTINGS:
-- Shutdown voltage: 3300 mV
-- GPS frequency: 90 sec
-- Accuracy: 2 (min. HDOP*10: 30)
-- Activation delay: 60 sec
+- Min voltage: 3300 mV
+- Frequency: 90 s
+- Min HDOP (x10): 30
+- Activation delay: 60 s
 - Geofencing: 0
-- ON time: 8:00 - 14:00 UTC
+- Burst duration: 0 s
+- Time: 8:00 - 14:00 UTC
 -------------------
-(0) Read memory again
-(1) Reset memory
-(2) Set shutdown voltage
-(3) Set GPS frequency
-(4) Set accuracy
-(5) Set delay after activation
-(6) Set ON/OFF hour
-(7) Toggle geofencing ON/OFF
-(8) Exit
+0 Read memory
+1 Reset memory
+2 Set min. voltage
+3 Set frequency
+4 Set accuracy
+5 Set activation delay
+6 Set times
+7 Toggle geofencing ON/OFF
+8 Set burst duration
+9 Exit
 -------------------
 ```
 
 ## Configuration Parameters
-* **Read memory**: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
+* **Read memory**: printing all stored GPS fixes as CSV-compatible list (count, timestamp in UTC, latitude, longitude)
 * **Reset memory**: deleting all stored GPS fixes
-* **Shutdown voltage (3000 - 4250, in mV)**: open-circuit voltage (no load) when the TickTag shall stop recording GPS data
+* **Min. voltage (3000 - 4250, in mV)**: recording is stopped when battery voltage (open-circuit, no load) drops below that threshold
 * **Frequency (1 - 16382, in s)**: GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered and puts the device in fitness low power mode
-* **Accuracy (1 - 255, HDOP x 10)**: HDOP value that tries to be achieved within 9 seconds after getting the first positional estimate
+* **Accuracy (1 - 250, HDOP x 10)**: HDOP value (times 10, 30 = 3.0) that tries to be achieved within 9 seconds after getting the first positional estimate
 * **Activation delay (10 - 16382, in s)**: delay after activation before the tag starts recording data
-* **On- and off-time (0000 - 2359, in min within day)**: daily recording time window
-* **Geo-fencing (true/false)**: when activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
-* **Blinking (true/false)**: when activated the tag blinks every second when GPS is active
+* **Sampling times (0000 - 2359, time within day)**: daily recording time window
+* **Geo-fencing (true/false)**: if set to true the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
+* **Blinking (true/false)**: if set to true the tag blinks every second when GPS is active
 
 ## State Machine
 !!!PHOTO!!!

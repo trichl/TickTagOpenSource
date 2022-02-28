@@ -200,7 +200,7 @@ SETTINGS:
 * **Blinking (true/false)**: if set to true the tag blinks every second when GPS is active
 
 ## State Machine
-!!!PHOTO!!!
+![StateMachine](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/StateMachineTickTagV3.png?raw=true)
 
 # V Data Compression Algorithm
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).

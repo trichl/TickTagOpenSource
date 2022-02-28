@@ -1,5 +1,4 @@
-![TTIcon](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png?raw=true)
-<img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png" width="48">
+<img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png" width="100">
 
 # I Repository Introduction
  

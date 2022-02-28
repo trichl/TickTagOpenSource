@@ -10,6 +10,11 @@ This repository contains the entire production-ready design (hardware, software,
    * REV3: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
    * REV4: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
    * User interface board: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
+* Differences between REV3 and REV4
+   * 0.2 mm PCB instead of 0.15 mm (more stable)
+   * PCB slots instead of pads for soldering LiPos
+   * New load switch (SiP32431DNP3-T1GE4), as the old load switch has long lead times
+   * Reduced the footprints of some of the capacitors and resistors from 0402 to 0201
 
 # IDE for Software Development (Windows)
 * Atmel Studio 7.0: https://www.microchip.com/en-us/tools-resources/develop/microchip-studio

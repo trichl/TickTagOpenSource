@@ -7,9 +7,9 @@ This repository contains the entire production-ready design (hardware, software,
 * Schematics (.sch) and boards (.brd) are designed in Autodesk Eagle 9.5.2
 * PCBs were produced and assembled by [PCBWay](https://www.pcbway.com) (production-ready Gerber files and PCBWay settings in [TickTagHardware/GerberProductionFiles](TickTagHardware/GerberProductionFiles))
 * Production settings:
-   * REV3: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
-   * REV4: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
-   * User interface board: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
+   * **REV3**: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
+   * **REV4**: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
+   * **User interface board**: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4:
    * 0.2 mm PCB instead of 0.15 mm (more robust)
    * PCB slots instead of pads for soldering LiPos
@@ -45,7 +45,7 @@ This repository contains the entire production-ready design (hardware, software,
 * Keep the area below the TickTag as flat as possible, otherwise you might not be able to click the tag on the user interface board anymore
 
 # Charging the Battery
-* WARNING: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
+* **WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently
 * The battery can be recharged directly on the breakout board: !!!PHOTO!!!
 * Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
 * Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
@@ -92,49 +92,49 @@ This repository contains the entire production-ready design (hardware, software,
 
 # After the Activation (Data Sampling)
 * After the activation delay, the tag starts blinking green every second and tries to get the current time via GPS satellites. If it can’t obtain the time within 120 seconds, it will sleep for 15 minutes and will try again.
-   * IMPORTANT: If blinking configuration is set to false the tag will completely stop blinking at all after getting the current UTC time
+   * **IMPORTANT**: If blinking configuration is set to false the tag will completely stop blinking at all after getting the current UTC time
    * If you have configured the tag to only sample GPS at certain times:
        * IMPORTANT: Before attaching the tag to the animal (e.g., the day before): go outside, activate the tag, wait until it starts blinking, wait until the green LED stays on for 2 seconds (tag got the time and went to sleep mode).
 * The tag samples GPS data (continuously or from time to time, depending on the configuration)
 * The module deactivates itself if the battery voltage is low (default configuration: 3.3V) or if the memory is full (maximum 13,100 fixes)
 
 # Mounting the Tag on an Animal
-* IMPORTANT: The small antenna of the TickTag is disturbed by any electrically conducting material nearby, so keep the antenna away from other tags, VHF/UHF tags, batteries, screws or similar materials (at least 5 cm).
-* IMPORTANT: The antenna can easily break if bent too strong. Try to protect the antenna with a 3D-printed housing (for example with ASA material).
-* IMPORTANT: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
-* IMPORTANT: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky: !!!PHOTO!!!
-* IMPORTANT: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (blu-tack works fine): !!!PHOTO!!!
+* **IMPORTANT**: The small antenna of the TickTag is disturbed by any electrically conducting material nearby, so keep the antenna away from other tags, VHF/UHF tags, batteries, screws or similar materials (at least 5 cm).
+* **IMPORTANT**: The antenna can easily break if bent too strong. Try to protect the antenna with a 3D-printed housing (for example with ASA material).
+* **IMPORTANT**: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
+* **IMPORTANT**: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky: !!!PHOTO!!!
+* **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (blu-tack works fine): !!!PHOTO!!!
 
 # Data Download, Configuration and Memory Reset
 !!!PHOTO!!!
 1. Choose a serial software
-   * Option 1: Download a serial program for your computer
+   * **Option 1**: Download a serial program for your computer
        * For example (Windows 10): Termite: https://www.compuphase.com/software_termite.htm
        * !!!PHOTO!!!
        * For example (Windows 10): MobaXTerm: https://mobaxterm.mobatek.net/
        * !!!PHOTO!!!
        * The Arduino Serial Monitor also works fine
-   * Option 2: Use the TickTag Android app [TickTagAndroidApp](TickTagAndroidApp) and an USB OTG adapter to connect the breakout board with the phone
+   * **Option 2**: Use the TickTag Android app [TickTagAndroidApp](TickTagAndroidApp) and an USB OTG adapter to connect the breakout board with the phone
 2. The battery needs to be connected to the tag
 3. Check if the jumper settings are like in the picture above (B, C, E)
 4. Gently and very carefully click the tag on the breakout board (A)
 5. Connect the USB connector (G) to a computer or Android phone (red LED on breakout board turns on)
 6. Turn the charge slide button (F) to the left to charge the battery while downloading data (not mandatory, but recommended)
-7. For option 1: Open the serial program on your computer with following settings:
+7. **For option 1**: Open the serial program on your computer with following settings:
    * COM port: select the CP2104N COM port from the list
    * Baud rate: 9600
    * Default serial settings (8 data bits, 1 stop bit, no parity)
 
 # Configuration Parameters
-* Read memory: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
-* Reset memory: all stored GPS fixes are deleted
-* Shutdown voltage (3000 - 4250, in mV): Open-circuit voltage (no load) when the TickTag shall stop recording GPS data
-* Frequency (1 - 16382, in s): GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered and puts the device in fitness low power mode
-* Accuracy (1 - 255, HDOP x 10): HDOP value that tries to be achieved within 9 seconds after getting the first positional estimate
-* Activation delay (10 - 16382, in s): Delay after activation before the tag starts recording data
-* On time (0000 - 2359, in min within day): Daily recording time window
-* Geo-fencing (true/false): When activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
-* Blinking (true/false): When activated the tag blinks every second when GPS is active
+* **Read memory**: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)
+* **Reset memory**: all stored GPS fixes are deleted
+* **Shutdown voltage (3000 - 4250, in mV)**: Open-circuit voltage (no load) when the TickTag shall stop recording GPS data
+* **Frequency (1 - 16382, in s)**: GPS fix attempt frequency, between 1 and 5 s the TickTag keeps the GPS module constantly powered and puts the device in fitness low power mode
+* **Accuracy (1 - 255, HDOP x 10)**: HDOP value that tries to be achieved within 9 seconds after getting the first positional estimate
+* **Activation delay (10 - 16382, in s)**: Delay after activation before the tag starts recording data
+* **On time (0000 - 2359, in min within day)**: Daily recording time window
+* **Geo-fencing (true/false)**: When activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
+* **Blinking (true/false)**: When activated the tag blinks every second when GPS is active
  
 # Android App
 
@@ -144,8 +144,8 @@ This repository contains the entire production-ready design (hardware, software,
 
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).
 
-* Latitute (A): stored in 25 Bit (unsigned): compressedLatitude = (latitude * 100000) + 9000000
-* Longitude (B): stored in 26 Bit (unsigned): compressedLongitude = (longitude * 100000) + 18000000
-* Timestamp (C): stored in 29 Bit  (unsigned): compressedTimestamp = timestamp - 1618428394
+* **Latitute (A)**: stored in 25 Bit (unsigned): compressedLatitude = (latitude * 100000) + 9000000
+* **Longitude (B)**: stored in 26 Bit (unsigned): compressedLongitude = (longitude * 100000) + 18000000
+* **Timestamp (C)**: stored in 29 Bit  (unsigned): compressedTimestamp = timestamp - 1618428394
 * Storage pattern of Bits: AAAAAAAA AAAAAAAA AAAAAAAA ABBBBBBB BBBBBBBB BBBBBBBB BBBCCCCC CCCCCCCC CCCCCCCC CCCCCCCC
 * Total length: 10 Byte per GPS fix

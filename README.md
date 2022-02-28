@@ -68,6 +68,7 @@ This repository contains the entire production-ready design (hardware, software,
 * Activation delay (10 - 16382, in s): Delay after activation before the tag starts recording data
 * On time (0000 - 2359, in min within day): Daily recording time window
 * Geo-fencing (true/false): When activated the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
+* Blinking (true/false): When activated the tag blinks every second when GPS is active
 
 # Activation
 * Prerequisites

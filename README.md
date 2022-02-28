@@ -26,7 +26,7 @@ This repository contains the entire production-ready design (hardware, software,
 * Alternatively software can be flashed with the official Atmel-ICE: https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
 
 # Flashing the Firmware
-Flashing should be done before soldering a battery to the tag
+Flashing should be done before soldering a battery to the tag.
 
 1. Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
 2. Double check the jumper locations on the user interface board !!!PHOTO!!!
@@ -100,7 +100,7 @@ Flashing should be done before soldering a battery to the tag
 * The tag samples GPS data (continuously or from time to time, depending on the configuration)
 * The module deactivates itself if the battery voltage is low (default configuration: 3.3V) or if the memory is full (maximum 13,100 fixes)
 
-# Mounting the Tag on an Animal
+# On-Animal Mounting
 * **IMPORTANT**: The small antenna of the TickTag is disturbed by any electrically conducting material nearby, so keep the antenna away from other tags, VHF/UHF tags, batteries, screws or similar materials (at least 5 cm).
 * **IMPORTANT**: The antenna can easily break if bent too strong. Try to protect the antenna with a 3D-printed housing (for example with ASA material).
 * **IMPORTANT**: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
@@ -117,15 +117,61 @@ Flashing should be done before soldering a battery to the tag
        * !!!PHOTO!!!
        * The Arduino Serial Monitor also works fine
    * **Option 2**: Use the TickTag Android app [TickTagAndroidApp](TickTagAndroidApp) and an USB OTG adapter to connect the breakout board with the phone
-2. The battery needs to be connected to the tag
+2. The battery needs to be connected (soldered) to the tag
 3. Check if the jumper settings are like in the picture above (B, C, E)
-4. Gently and very carefully click the tag on the breakout board (A)
+4. Gently and very carefully click the tag on the breakout board (A), mind the correct orientation
 5. Connect the USB connector (G) to a computer or Android phone (red LED on breakout board turns on)
 6. Turn the charge slide button (F) to the left to charge the battery while downloading data (not mandatory, but recommended)
 7. **For option 1**: Open the serial program on your computer with following settings:
    * COM port: select the CP2104N COM port from the list
    * Baud rate: 9600
    * Default serial settings (8 data bits, 1 stop bit, no parity)
+8. Click on CONNECT in your serial program or the Android app
+9. Press the download button for 5 seconds (not longer) until the green LED on the tag blinks for 5 times
+10. Data download is shown in your serial program (in CSV format)
+11. After the download the tag shows a little menu for configuration
+   * Data download might take some minutes (if memory is full)
+   * Data download can be interrupted by pressing the download button once (short), data will not be deleted
+
+Example data output of the serial program (or Android app):
+
+```
+---TICK-TAG---
+***START MEMORY***
+UVs: 0, TOs: 0/0, ErrorsOrGF: 0, TTFF: 0
+Fixes: 10, Avg. time to fix: 11 s, Avg. HDOP (x10): 16
+count,timestamp,lat,lon
+1,1635235981,47.74340,8.99910
+2,1635236130,47.74346,8.99922
+3,1635236352,47.74340,8.99889
+4,1635236506,47.74327,8.99894
+5,1635236682,47.74336,8.99879
+6,1635238092,47.74340,8.99824
+7,1635238313,47.74304,8.99896
+8,1635238411,47.74329,8.99883
+9,1635238511,47.74332,8.99878
+10,1635238610,47.74325,8.99881
+***END MEMORY***
+V108, ID: 30-2509, 3533mV, 01b
+SETTINGS:
+- Shutdown voltage: 3300 mV
+- GPS frequency: 90 sec
+- Accuracy: 2 (min. HDOP*10: 30)
+- Activation delay: 60 sec
+- Geofencing: 0
+- ON time: 8:00 - 14:00 UTC
+-------------------
+(0) Read memory again
+(1) Reset memory
+(2) Set shutdown voltage
+(3) Set GPS frequency
+(4) Set accuracy
+(5) Set delay after activation
+(6) Set ON/OFF hour
+(7) Toggle geofencing ON/OFF
+(8) Exit
+-------------------
+```
 
 # Configuration Parameters
 * **Read memory**: printing all stored GPS fixes as CSV-compatible list (timestamp in UTC, latitude, longitude)

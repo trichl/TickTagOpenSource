@@ -80,7 +80,7 @@ Flashing should be done before soldering a battery to the tag.
 1. Check if the yellow jumper connects (E) "3" and "2" ("lipo")
 2. Gently click the tag on the user interface board (with battery attached to it) (A), mind the correct orientation of the tag
 3. Connect the USB connector to a computer or powerbank (red LED turns on) (G)
-4. Slide the charge button (red rectangle in photo above) on the user interface board (F) to the left (ON)
+4. Slide the charge button on the user interface board (F) to the left (ON)
 5. A green LED on the user interface board turns on and indicates that the battery is being charged
 6. In case the tag was previously activated, it first needs to be deactivated:
    * Wait some minutes until battery is charged a bit
@@ -98,7 +98,9 @@ Flashing should be done before soldering a battery to the tag.
    * The tags need to be connected to a charged lithium polymer battery (plus and minus pads on the tag are soldered to the battery)
    * If the battery voltage is too low, the tag won’t start (please charge the battery), see chapter "Charge Battery"
    * If the data memory is full, the tag won't start (please download the data and reset the memory), see chapter "Data Download, Configuration and Memory Reset"
-   * Check the location of the green LED on the tag (it will give you visual feedback): !!!PHOTO!!!
+   * Check the location of the green LED on the tag (it will give you visual feedback):
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3led.jpg?raw=true)
 
 ### Activation option 1: by a wire: !!!PHOTO!!!
 1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to (red circle on the left)

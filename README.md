@@ -156,8 +156,9 @@ Flashing should be done before soldering a battery to the tag.
 ## Data Download, Configuration and Memory Reset
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.png?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/moba.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/moba.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/androidapp.PNG?raw=true)
 
 1. Choose a serial software
    * **Option 1**: Download a serial program for your computer

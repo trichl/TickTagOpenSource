@@ -156,13 +156,11 @@ Flashing should be done before soldering a battery to the tag.
 ## Data Download, Configuration and Memory Reset
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
-
-1. Choose a serial software
-   * **Option 1**: Download a serial program for your computer
-
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.png?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/moba.png?raw=true)
 
+1. Choose a serial software
+   * **Option 1**: Download a serial program for your computer
        * For example (Windows 10): Termite: https://www.compuphase.com/software_termite.htm
        * For example (Windows 10): MobaXTerm: https://mobaxterm.mobatek.net/
        * !!!PHOTO!!!

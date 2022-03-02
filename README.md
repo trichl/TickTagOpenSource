@@ -164,7 +164,6 @@ Flashing should be done before soldering a battery to the tag.
    * **Option 1**: Download a serial program for your computer
        * For example (Windows 10): Termite: https://www.compuphase.com/software_termite.htm
        * For example (Windows 10): MobaXTerm: https://mobaxterm.mobatek.net/
-       * !!!PHOTO!!!
        * The Arduino Serial Monitor also works fine
    * **Option 2**: Use the TickTag Android app [TickTagAndroidApp](TickTagAndroidApp) and an USB OTG adapter to connect the breakout board with the phone
 2. The battery needs to be connected (soldered) to the tag

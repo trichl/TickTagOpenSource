@@ -60,7 +60,7 @@ Flashing should be done before soldering a battery to the tag.
 
 ## Tag Assembly
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3Soldered.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3soldered.jpg?raw=true)
 
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
 * No battery protection circuit is needed, the battery is protected by software

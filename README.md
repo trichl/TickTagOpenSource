@@ -149,7 +149,7 @@ Flashing should be done before soldering a battery to the tag.
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/mounting.PNG?raw=true)
 
-* **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (Bostik Blu Tack works fine):
+* **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (Bostik Blu Tack is a glue that can be easily removed afterwards):
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
 

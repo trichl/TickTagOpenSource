@@ -41,11 +41,13 @@ This repository contains the entire production-ready design (hardware, software,
 ## Flashing the Firmware
 Flashing should be done before soldering a battery to the tag.
 
-1. Check if the yellow jumper connects "1" and "2" ("ldo") like shown here: !!!PHOTO!!!
-2. Gently click the tag on the user interface board (without battery attached to it), mind the correct orientation of the tag
+![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings2.png?raw=true)
+
+1. Check if the yellow jumper (E) connects "1" and "2" ("ldo")
+2. Gently click the tag on the user interface board (without battery attached to it) (A), mind the correct orientation of the tag
 3. Connect D6 of the Arduino Nano to the UPDI pin of the user interface board (or use an Atmel-ICE instead of an Arduino Nano)
-4. Connect the user interface board to a computer (red LED turns on), connect the Arduino Nano to the same computer
-5. Slide the UPDI button on the user interface board to ON
+4. Connect the user interface board to a computer (red LED turns on) (G), connect the Arduino Nano to the same computer
+5. Slide the UPDI button on the user interface board (H) to ON
 6. Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
 7. Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)

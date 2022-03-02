@@ -53,7 +53,7 @@ Flashing should be done before soldering a battery to the tag.
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)
 9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools (Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i"):
 
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.png?raw=true)
+![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.PNG?raw=true)
 
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware

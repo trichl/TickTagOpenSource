@@ -11,7 +11,9 @@ This repository contains the entire production-ready design (hardware, software,
    * **REV3**: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
 <img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3.jpg" width="200">
    * **REV4**: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
-   * ![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
+
+![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
+
    * **User interface board**: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4:
    * 0.2 mm PCB instead of 0.15 mm (more robust)

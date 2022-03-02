@@ -155,6 +155,7 @@ Flashing should be done before soldering a battery to the tag.
 ## Data Download, Configuration and Memory Reset
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibsettings1.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibphone.jpg?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.png?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/mobaxterm.png?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/app.png?raw=true)

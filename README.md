@@ -154,26 +154,31 @@ Flashing should be done before soldering a battery to the tag.
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
 
 ## Data Download, Configuration and Memory Reset
-!!!PHOTO!!!
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
+
 1. Choose a serial software
    * **Option 1**: Download a serial program for your computer
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/moba.png?raw=true)
+
        * For example (Windows 10): Termite: https://www.compuphase.com/software_termite.htm
-       * !!!PHOTO!!!
        * For example (Windows 10): MobaXTerm: https://mobaxterm.mobatek.net/
        * !!!PHOTO!!!
        * The Arduino Serial Monitor also works fine
    * **Option 2**: Use the TickTag Android app [TickTagAndroidApp](TickTagAndroidApp) and an USB OTG adapter to connect the breakout board with the phone
 2. The battery needs to be connected (soldered) to the tag
-3. Check if the jumper settings are like in the picture above (B, C, E)
-4. Gently and very carefully click the tag on the breakout board (A), mind the correct orientation
-5. Connect the USB connector (G) to a computer or Android phone (red LED on user interface board turns on)
-6. Turn the charge slide button (F) to the left to charge the battery while downloading data (not mandatory, but recommended)
+3. Check if the yellow jumper connects (E) "3" and "2" ("lipo")
+4. Gently click the tag on the user interface board (with battery attached to it) (A), mind the correct orientation of the tag
+5. Connect the USB connector to a computer or Android phone (red LED turns on) (G)
+6. Slide the charge button on the user interface board (F) to the left (ON) to charge the battery while downloading data (not mandatory, but recommended)
 7. **For option 1**: Open the serial program on your computer with following settings:
    * COM port: select the CP2104N COM port from the list
    * Baud rate: 9600
    * Default serial settings (8 data bits, 1 stop bit, no parity)
 8. Click on CONNECT in your serial program or the Android app
-9. Press the download button for 5 seconds (not longer) until the green LED on the tag blinks for 5 times
+9. Press the download button (D) for 5 seconds (not longer) until the green LED on the tag blinks for 5 times
 10. Data download is shown in your serial program (in CSV format)
 11. After the download the tag shows a little menu for configuration
        * Data download might take some minutes (if memory is full)

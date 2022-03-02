@@ -104,7 +104,7 @@ Flashing should be done before soldering a battery to the tag.
 
 ### Activation option 1: by a wire:
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3activation.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3activation1.jpg?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/Wire.PNG?raw=true)
 
 1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to

@@ -10,12 +10,12 @@ This repository contains the entire production-ready design (hardware, software,
 * Production settings:
    * **REV3**: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev3.jpg?raw=true)
 
    * **REV4**: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV42.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev4top.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev4bottom.png?raw=true)
 
    * **User interface board**: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4:
@@ -41,7 +41,7 @@ This repository contains the entire production-ready design (hardware, software,
 ## Flashing the Firmware
 Flashing should be done before soldering a battery to the tag.
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings3.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibsettings3.png?raw=true)
 
 1. Check if the yellow jumper (E) connects "1" and "2" ("ldo")
 2. Gently click the tag on the user interface board (without battery attached to it) (A), mind the correct orientation of the tag
@@ -53,14 +53,14 @@ Flashing should be done before soldering a battery to the tag.
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)
 9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools (Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i"):
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/atmelconfig.png?raw=true)
 
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 
 ## Tag Assembly
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3soldered.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev3soldered.jpg?raw=true)
 
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
 * No battery protection circuit is needed, the battery is protected by software
@@ -74,8 +74,7 @@ Flashing should be done before soldering a battery to the tag.
 **WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board:
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uib2.jpg?raw=true)
-
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibsettings1.png?raw=true)
 
 1. Check if the yellow jumper connects (E) "3" and "2" ("lipo")
 2. Gently click the tag on the user interface board (with battery attached to it) (A), mind the correct orientation of the tag
@@ -104,8 +103,8 @@ Flashing should be done before soldering a battery to the tag.
 
 ### Activation option 1: by a wire
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3activation1.jpg?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/Wire.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev3activation1.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/activationwire.png?raw=true)
 
 1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to
 2. Gently touch with the other end of the wire the hole marked with "A" (or "ST")
@@ -118,8 +117,8 @@ Flashing should be done before soldering a battery to the tag.
 
 ### Activation option 2: on breakout board
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev3click.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibsettings1.png?raw=true)
 
 1. Locate the click connector on the tag (see picture above)
 2. Take a look at the breakout board, do not connect the USB power connector (G) to the computer or phone (no external power needed for activation)
@@ -147,18 +146,18 @@ Flashing should be done before soldering a battery to the tag.
 * **IMPORTANT**: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
 * **IMPORTANT**: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky:
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/mounting.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/antenna.png?raw=true)
 
 * **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (Bostik Blu Tack is a glue that can be easily removed afterwards):
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/rev3click.jpg?raw=true)
 
 ## Data Download, Configuration and Memory Reset
 
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.PNG?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/moba.PNG?raw=true)
-![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/androidapp.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uibsettings1.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/termite.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/mobaxterm.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/app.png?raw=true)
 
 1. Choose a serial software
    * **Option 1**: Download a serial program for your computer
@@ -239,7 +238,7 @@ SETTINGS:
 * **Blinking (true/false)**: if set to true the tag blinks every second when GPS is active
 
 ## State Machine
-![StateMachine](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/StateMachineTickTagV3.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/statemachine.png?raw=true)
 
 # V Data Compression Algorithm
 GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm. GPS positions are stored with 5 decimal places (accuracy: 1.11 m).

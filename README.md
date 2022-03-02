@@ -51,7 +51,10 @@ Flashing should be done before soldering a battery to the tag.
 6. Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuse.bat with a text editor and enter the COM port of the Arduino Nano on your computer
 7. Execute ScriptWriteFuse.bat to write the configuration fuses of the ATTINY
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)
-9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools: !!!PHOTO!!!
+9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools (Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i"):
+
+![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.png?raw=true)
+
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 

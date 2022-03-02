@@ -145,8 +145,13 @@ Flashing should be done before soldering a battery to the tag.
 * **IMPORTANT**: The small antenna of the TickTag is disturbed by any electrically conducting material nearby, so keep the antenna away from other tags, VHF/UHF tags, batteries, screws or similar materials (at least 5 cm).
 * **IMPORTANT**: The antenna can easily break if bent too strong. Try to protect the antenna with a 3D-printed housing (for example with ASA material).
 * **IMPORTANT**: The battery needs to be located behind the tag (see picture below), never under the tag, as it will disturb the antenna.
-* **IMPORTANT**: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky: !!!PHOTO!!!
-* **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (Bostik Blu Tack works fine): !!!PHOTO!!!
+* **IMPORTANT**: Mount the tag on the flat side (connector facing down, top side with antenna facing the sky). The photo shows the top side that should face the sky:
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/mounting.PNG?raw=true)
+
+* **IMPORTANT**: Do not glue anything on the connector that can't be removed, otherwise data cannot be downloaded (Bostik Blu Tack works fine):
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
 
 ## Data Download, Configuration and Memory Reset
 !!!PHOTO!!!

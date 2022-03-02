@@ -10,12 +10,12 @@ This repository contains the entire production-ready design (hardware, software,
 * Production settings:
    * **REV3**: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
 
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3.jpg?raw=true)
 
    * **REV4**: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
 
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV42.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV42.png?raw=true)
 
    * **User interface board**: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4:
@@ -41,7 +41,7 @@ This repository contains the entire production-ready design (hardware, software,
 ## Flashing the Firmware
 Flashing should be done before soldering a battery to the tag.
 
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings2.png?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings3.png?raw=true)
 
 1. Check if the yellow jumper (E) connects "1" and "2" ("ldo")
 2. Gently click the tag on the user interface board (without battery attached to it) (A), mind the correct orientation of the tag
@@ -53,12 +53,15 @@ Flashing should be done before soldering a battery to the tag.
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst)
 9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools (Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\$(TargetName).hex:i"):
 
-![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.PNG?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/ExternalTools.PNG?raw=true)
 
 10. Press F7 to compile the firmware
 11. Press Tools -> jtag2updi ATtiny1626 to flash the firmware
 
 ## Tag Assembly
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3Soldered.jpg?raw=true)
+
 * If the firmware is successfully flashed onto the microcontroller you can solder a battery to the TickTag battery terminals (plus and minus is written on the tag)
 * No battery protection circuit is needed, the battery is protected by software
 * You can use a glass fiber pen to roughen the LiPo tabs, which makes soldering of the aluminium tabs more easy (e.g., with a Laeufer 69119 pen)
@@ -68,16 +71,20 @@ Flashing should be done before soldering a battery to the tag.
 # IV Tag Manual
 
 ## Charging the Battery
-**WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board: !!!PHOTO!!!
+**WARNING**: never connect the TickTag to the user interface board when the 3-pin jumper is set to "ldo", otherwise the LiPo will be damaged permanently. The battery can be recharged directly on the breakout board:
 
-1. Check if the yellow jumper connects "3" and "2" ("lipo") like shown in the photo above
-2. Gently click the tag on the user interface board (with battery attached to it), mind the correct orientation of the tag
-3. Connect the USB connector to a computer or powerbank (red LED turns on)
-4. Slide the charge button (red rectangle in photo above) to the left (ON)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/uib2.jpg?raw=true)
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
+
+1. Check if the yellow jumper connects (E) "3" and "2" ("lipo")
+2. Gently click the tag on the user interface board (with battery attached to it) (A), mind the correct orientation of the tag
+3. Connect the USB connector to a computer or powerbank (red LED turns on) (G)
+4. Slide the charge button (red rectangle in photo above) on the user interface board (F) to the left (ON)
 5. A green LED on the user interface board turns on and indicates that the battery is being charged
 6. In case the tag was previously activated, it first needs to be deactivated:
    * Wait some minutes until battery is charged a bit
-   * Press the white button for 5 seconds to restart the tag and enter menue
+   * Press the white button (D) for 5 seconds to restart the tag and enter menue
    * Green LED on the tag will blink 5 times to indicate download mode and system restart
 7. Wait until the green LED on the user interface board turns off (battery charged)
    * This can take hours (default charge current: 15 mA)

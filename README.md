@@ -190,7 +190,7 @@ Example data output of the serial program (or Android app):
 ```
 ---TICK-TAG---
 *START MEMORY*
-UVs: 0, TOs: 0/0, ErrorsOrGF: 0, TTFF: 0
+UVs: 0, TOs: 0/0, ErrorsOrGF: 0, TTFF: 68
 Fixes: 10, Avg. TTF: 11 s, Avg. HDOP (x10): 16
 count,timestamp,lat,lon
 1,1635235981,47.74340,8.99910
@@ -213,7 +213,7 @@ SETTINGS:
 - Geofencing: 0
 - Burst duration: 0 s
 - Time: 8:00 - 14:00 UTC
--------------------
+
 0 Read memory
 1 Reset memory
 2 Set min. voltage
@@ -224,7 +224,6 @@ SETTINGS:
 7 Toggle geofencing ON/OFF
 8 Set burst duration
 9 Exit
--------------------
 ```
 
 ## Configuration Parameters

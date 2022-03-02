@@ -11,7 +11,7 @@ This repository contains the entire production-ready design (hardware, software,
    * **REV3**: 24.9 x 10.5 mm, 2 layers, 0.15 mm thickness (flex), 0.35 mm min hole size, immersion gold (ENIG) surface finish (1U"), 0.06 mm min track spacing, 1 oz Cu finished copper, polyimide flex material
 <img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3.jpg" width="200">
    * **REV4**: 23.61 x 10.06 mm, 2 layers, 0.2 mm thickness, 0.25 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 5/5 mil min track spacing, 1 oz Cu finished copper, FR-4 TG150 material
-<img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png" width="200"><img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV42.png" width="200">
+   * ![REV4](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV41.png?raw=true)
    * **User interface board**: 66.4 x 17.8 mm, 2 layers, 1 mm thickness, 0.3 mm min hole size, immersion gold (ENIG) surface finish (1U"), tenting vias, 6/6 mil min track spacing, 1 oz Cu finished copper, FR-4 TG130 material
 * Differences between REV3 and REV4:
    * 0.2 mm PCB instead of 0.15 mm (more robust)
@@ -92,6 +92,7 @@ Flashing should be done before soldering a battery to the tag.
 6. If it doesn’t blink at all: battery voltage might be low or the tag is already activated
 7. If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
 8. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
+
 ### Activation option 2: on breakout board: !!!PHOTO!!!
 1. Locate the click connector on the tag (red circle): !!!PHOTO!!!
 2. Take a look at the breakout board, do not connect the USB power connector to the computer or phone (no external power needed for activation): !!!PHOTO!!!

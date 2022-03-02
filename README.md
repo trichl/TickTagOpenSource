@@ -102,26 +102,34 @@ Flashing should be done before soldering a battery to the tag.
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3led.jpg?raw=true)
 
-### Activation option 1: by a wire: !!!PHOTO!!!
-1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to (red circle on the left)
-2. Gently touch with the other end of the wire the hole marked with "A" (or "ST") (red circle on the right)
+### Activation option 1: by a wire:
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3activation.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/Wire.PNG?raw=true)
+
+1. Gently touch with one end of a conducting wire the ground connection where the battery minus is soldered to
+2. Gently touch with the other end of the wire the hole marked with "A" (or "ST")
 3. Once the tag starts blinking green, remove the wire immediately (should not take longer than 2 seconds)
 4. The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
 5. The green LED is located on the back side of the tag, so it's best to hold the breakout board sideways to see the blinking LED under the tag
-6. If it doesn’t blink at all: battery voltage might be low or the tag is already activated
+6. If it doesn't blink at all: battery voltage might be low or the tag is already activated
 7. If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
 8. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
 
 ### Activation option 2: on breakout board: !!!PHOTO!!!
-1. Locate the click connector on the tag (red circle): !!!PHOTO!!!
-2. Take a look at the breakout board, do not connect the USB power connector to the computer or phone (no external power needed for activation): !!!PHOTO!!!
-3. Gently and carefully click the tag on the breakout board where you see the connector counterpart (red tag outline in the photo above)
+
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
+![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)
+
+1. Locate the click connector on the tag (see picture above)
+2. Take a look at the breakout board, do not connect the USB power connector (G) to the computer or phone (no external power needed for activation)
+3. Gently click the tag on the user interface board (with battery attached to it) (A), mind the correct orientation of the tag
       * Take care of the correct orientation of the tag as shown in the photo, otherwise a short circuit might permanently damage the tag
-4. Now press the white button (red circle in photo above) for two seconds until the tag starts to blink
+4. Now press the white button (D) for two seconds until the tag starts to blink
       * Do not press the button longer than some seconds
       * The tag blinks 7 times to indicate that it’s activated, then waits for 700 ms and is blinking again to indicate battery status (1 time = battery low, 7 times = battery is full)
       * The green LED is located on the back side of the tag, so it's best to hold the breakout board sideways to see the blinking LED under the tag
-      * If it doesn’t blink at all: battery voltage might be low or the tag is already activated
+      * If it doesn't blink at all: battery voltage might be low or the tag is already activated
       * If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
 5. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
 

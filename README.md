@@ -102,7 +102,7 @@ Flashing should be done before soldering a battery to the tag.
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3led.jpg?raw=true)
 
-### Activation option 1: by a wire:
+### Activation option 1: by a wire
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3activation1.jpg?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/Wire.PNG?raw=true)
@@ -116,7 +116,7 @@ Flashing should be done before soldering a battery to the tag.
 7. If the tag blinks 5 times it entered download mode (was already activated), please wait a minute and start again from the beginning
 8. The tag is activated and will start sampling GPS data after 10 seconds (default configuration, can be changed, see chapter "Data Download, Configuration and Memory Reset")
 
-### Activation option 2: on breakout board: !!!PHOTO!!!
+### Activation option 2: on breakout board
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/REV3click.jpg?raw=true)
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/UIBSettings1.png?raw=true)

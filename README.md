@@ -249,3 +249,8 @@ GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm
 * **Timestamp (C)**: stored in 29 Bit  (unsigned): compressedTimestamp = timestamp - 1618428394
 * Storage pattern of Bits: **AAAAAAAA AAAAAAAA AAAAAAAA ABBBBBBB BBBBBBBB BBBBBBBB BBBCCCCC CCCCCCCC CCCCCCCC CCCCCCCC**
 * Total length: 10 Byte per GPS fix
+
+# VI 3D-printed Housings
+* Check [TickTag3DPrints](TickTag3DPrints) for .STL files (designed in Fusion 360)
+* Housings were printed with ASA filament on a Prusa Mini (0.4 mm nozzle)
+* PrusaSlider 2.2.0 settings: 0.45 mm extrusion width, 0.10 mm DETAIL settings

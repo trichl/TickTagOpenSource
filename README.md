@@ -253,3 +253,6 @@ GPS data is stored on the 128 kByte EEPROM with a lossless compression algorithm
 * Check [TickTag3DPrints](TickTag3DPrints) for .STL files (designed in Fusion 360)
 * Housings were printed with ASA filament on a Prusa Mini (0.4 mm nozzle)
 * PrusaSlider 2.2.0 settings: 0.45 mm extrusion width, 0.10 mm DETAIL settings
+
+# VII Data
+* Check [TickTagData](TickTagData) for data results

@@ -10803,37 +10803,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <plain>
 <text x="-101.6" y="102.87" size="1.778" layer="91" grouprefs="MEMORY">0x50</text>
 <text x="17.78" y="34.29" size="1.778" layer="91" grouprefs="L70_GPS">Min 100mA</text>
-<text x="72.39" y="43.18" size="1.778" layer="91">OSHPark Flex:
-Trace calculation (coplanar):
-Dielectric constant: 3.2
-Dielectric thickness: 0.1016mm
-Track width: 0.254mm
-Gap width: 0.13mm
-= 48.11 Ohm</text>
-<text x="-33.02" y="-44.45" size="1.778" layer="91">PCBWay Flex 0.15mm:
-Trace calculation (coplanar):
-Dielectric constant: 3.4
-Dielectric thickness: 0.065mm
-Track width: 0.16mm
-Gap width: 0.13mm
-= 48.71 Ohm
-
-https://www.pcbway.com/pcb_prototype/Stack_up_for_FPC.html</text>
-<text x="72.39" y="-1.27" size="1.778" layer="91">PCBWay Normal 0.2mm:
-Trace calculation (coplanar):
-Dielectric constant: 4.29
-Dielectric thickness: 0.13mm (according to PCBWay)
-Track width: 0.23mm
-Gap width: 0.13mm
-= 51.08 Ohm</text>
 <text x="-90.17" y="-7.62" size="1.778" layer="91" grouprefs="LOAD_SWITCH_NEW">SiP32431DNP3-T1GE4</text>
-<text x="72.39" y="21.59" size="1.778" layer="91">PCBWay Normal 0.2mm:
-Trace calculation (coplanar):
-Dielectric constant: 4.29
-Dielectric thickness: 0.13mm (according to PCBWay)
-Track width: 0.25mm
-Gap width: 0.15mm
-= 49.28 Ohm</text>
 </plain>
 <instances>
 <instance part="R_SDA" gate="G$1" x="-101.6" y="49.53" smashed="yes" rot="R90" grouprefs="I2C">
@@ -11354,10 +11324,6 @@ Gap width: 0.15mm
 </schematic>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

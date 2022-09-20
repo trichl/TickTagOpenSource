@@ -1921,29 +1921,6 @@ by exp-lbrs.ulp</description>
 <text x="-2.54" y="34.29" size="1.778" layer="91" grouprefs="L70_GPS">Min 100mA</text>
 <text x="-92.71" y="2.54" size="1.778" layer="91" grouprefs="LOADSWITCH">TPS22916CN
 10nA off, 0.5uA on</text>
-<text x="-16.51" y="-34.29" size="1.778" layer="91">OSHPark Flex:
-Trace calculation (coplanar):
-Dielectric constant: 3.2
-Dielectric thickness: 0.1016mm
-Track width: 0.254mm
-Gap width: 0.13mm
-= 48.11 Ohm</text>
-<text x="-114.3" y="-40.64" size="1.778" layer="91">PCBWay Flex 0.15mm:
-Trace calculation (coplanar):
-Dielectric constant: 3.4
-Dielectric thickness: 0.065mm
-Track width: 0.16mm
-Gap width: 0.13mm
-= 48.71 Ohm
-
-https://www.pcbway.com/pcb_prototype/Stack_up_for_FPC.html</text>
-<text x="-76.2" y="-35.56" size="1.778" layer="91">PCBWay Normal 0.2mm:
-Trace calculation (coplanar):
-Dielectric constant: 4.29
-Dielectric thickness: 0.13mm (according to PCBWay)
-Track width: 0.23mm
-Gap width: 0.13mm
-= 48.71 Ohm</text>
 </plain>
 <instances>
 <instance part="R_SCL" gate="G$1" x="-111.76" y="49.53" smashed="yes" rot="R90" grouprefs="I2C">

@@ -92,13 +92,14 @@ bool eepromWriteMemory(uint32_t adr, uint8_t *value_arr, uint32_t len) {
 		i2cStop();
 		
 		// wait until written
-		busyWritingTimeoutMs = 1000;
+		busyWritingTimeoutMs = 1000 / 5;
+		_delay_ms(10); // VERY IMPORTANT! otherwise eepromBusyWriting is blocking for 100 ms!! not enough time after stop
 		while(eepromBusyWriting()) {
-			_delay_ms(1);
+			_delay_ms(5);
 			busyWritingTimeoutMs--;
 			if(busyWritingTimeoutMs == 0) { return false; }
 		}
-		//printf("TO %d\n\r", busyWritingTimeoutMs);
+		//print("TO:"); printU32(busyWritingTimeoutMs); println("");
 		
 		// decrement for next cycle
 		len -= oneWriteCycleLen;

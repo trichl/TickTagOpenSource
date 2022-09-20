@@ -237,6 +237,16 @@ SETTINGS:
 * **Geo-fencing (true/false)**: if set to true the first GPS fix becomes the home location and only fixes outside a 300 m radius are stored (10 min hibernation afterwards)
 * **Blinking (true/false)**: if set to true the tag blinks every second when GPS is active
 
+## Default Configuration
+* After flashing the firmware the default configuration is set to:
+* **Min. voltage (3000 - 4250, in mV)**: 3000
+* **Frequency (1 - 16382, in s)**: 30
+* **Accuracy (1 - 250, HDOP x 10)**: 30
+* **Activation delay (10 - 16382, in s)**: 10
+* **Sampling times (0000 - 2359, time within day)**: always on
+* **Geo-fencing (true/false)**: false
+* **Blinking (true/false)**: false
+
 ## State Machine
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/statemachine.png?raw=true)
 

@@ -1,7 +1,9 @@
 <img src="https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/icon.png" width="100">
 
 # Warning
-A commercial company called LabMaker is now producing and selling the TickTag. Device prices are at least four times higher than the production costs. Our approval for such commercialization was not obtained in advance. We do not collaborate with the company and have no control about the quality of the produced devices. If devices are not produced exactly as documented they might not work as expected. We will not give any kind of support for devices sold by this company. We are happy to support scientists that want to produce their own (low-cost) TickTags!
+```diff
+- A commercial company called LabMaker is now producing and selling the TickTag. Device prices are at least four times higher than the production costs. Our approval for such commercialization was not obtained in advance. We do not collaborate with the company and have no control about the quality of the produced devices. If devices are not produced exactly as documented they might not work as expected. We will not give any kind of support for devices sold by this company. We are happy to support scientists that want to produce their own (low-cost) TickTags!
+```
 
 # I Repository Introduction
 This repository contains the entire production-ready design (hardware, software, user interface, 3D-printable housing, assembly instructions) of the open-source TickTag GPS logger.

@@ -49,9 +49,13 @@ Flashing should be done before soldering a battery to the tag.
 4. Connect the user interface board to a computer (red LED turns on) (G), connect the Arduino Nano to the same computer
 5. Slide the UPDI button on the user interface board (H) to ON
 6. Go to [TickTagProgramming/avrdude](TickTagProgramming/avrdude), open ScriptWriteFuses_ATTINY1626.bat (or ScriptWriteFuses_ATTINY1616.bat, if you use the 1616) with a text editor and enter the COM port of the Arduino Nano on your computer
-7. Execute ScriptWriteFuses_ATTINY1626.bat to write the configuration fuses of the ATTINY
+7. Execute ScriptWriteFuses_ATTINY1626.bat to write the configuration fuses of the ATTINY.
+( It may be possible that executing the script raises an error ie. missing dll file. In this case, try to download and install WinAVR [here](https://sourceforge.net/projects/winavr/) )
 8. Open Atmel Studio 7.0 and load the project [TickTagSoftwareBurst](TickTagSoftwareBurst) (you might need to setup the project first, and set the current device to ATtiny1626)
-9. Configure the ATTINY programming via Arduino Nano under Tools -> External Tools (Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\\$(TargetName).hex:i", COM7 needs to be replaced with the COM port of the Arduino Nano):
+9.  
+    1.  Configure the ATTINY programming via Arduino Nano under Tools -> External Tools
+    2.  To choose the command, select the three dots and find the location of the TickTagOpenSource repository. Then navigate to TickTagProgramming\avrdude\bin and select avrdude.exe
+    3.  For the Arguments: "-P COM7 -c jtag2updi -p t1626 -U flash:w:$(ProjectDir)Debug\\$(TargetName).hex:i", COM7 needs to be replaced with the COM port of the Arduino Nano:
 
 ![Image](https://github.com/trichl/TickTagOpenSource/blob/main/TickTagImages/atmelconfig.png?raw=true)
 

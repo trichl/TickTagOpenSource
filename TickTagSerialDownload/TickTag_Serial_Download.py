@@ -8,7 +8,7 @@ from inputimeout import inputimeout, TimeoutOccurred
 import sys
 
 
-PORT = 'COM18'
+PORT = 'COM14'
 BAUDRATE = 9600
 TIMEOUT = 5
 
@@ -129,7 +129,7 @@ class Tag_Data():
     logdata = None
 
     def __init__(self):
-        pass
+        self.rootpath = os.path.dirname(os.path.abspath(__file__))
         
     def main(self):
         self.write_temp_files()
@@ -185,26 +185,26 @@ class Tag_Data():
 
     def make_summary_files(self):
         try:
-            with open(f'summary_{self.date_first_timestamp}.csv', 'r') as summary_file:
+            with open(os.path.join(self.rootpath, f'summary_{self.date_first_timestamp}.csv'), 'r') as summary_file:
                 print("\nExistsing date summary file ...")
         except:
-            with open(f'summary_{self.date_first_timestamp}.csv', 'w') as summary_file:
+            with open(os.path.join(self.rootpath, f'summary_{self.date_first_timestamp}.csv'), 'w') as summary_file:
                 print('\nCreating new summary file')
                 summary_file.write('id,fixes,voltage(mV),duration(h),TTFF(s),Avg. TTF(s),UVs,ErrorsOrGF,TOs,Avg. HDOP (x10)\n')
         try:
-            with open(f'summary.csv', 'r') as summary_file:
+            with open(os.path.join(self.rootpath, f'summary.csv'), 'r') as summary_file:
                 #print("Existsing global summary file ...")
                 pass
         except:
-            with open(f'summary.csv', 'w') as summary_file:
+            with open(os.path.join(self.rootpath, f'summary.csv'), 'w') as summary_file:
                 print('\nCreating new global summary file')
                 summary_file.write('id,fixes,voltage(mV),duration(h),TTFF(s),Avg. TTF(s),UVs,ErrorsOrGF,TOs,Avg. HDOP (x10)\n')
         
     def update_summary_files(self):
-        with open(f'summary_{self.date_first_timestamp}.csv', 'a') as summary_file:
+        with open(os.path.join(self.rootpath, f'summary_{self.date_first_timestamp}.csv'), 'a') as summary_file:
             summary_file.write(f'''{self.id},{self.fixes},{get_digits(self.voltage)},{round(self.duration/3600,3)},{get_digits(self.datadict['TTFF'])},{get_digits(self.datadict['Avg.TTF'])},{self.datadict['UVs']},{self.datadict['ErrorsOrGF']},{self.datadict['TOs']},{self.datadict['Avg.HDOP(x10)']}\n''')
     
-        with open(f'summary.csv', 'a') as summary_file:
+        with open(os.path.join(self.rootpath, f'summary.csv'), 'a') as summary_file:
             summary_file.write(f'''{self.id},{self.fixes},{get_digits(self.voltage)},{round(self.duration/3600,3)},{get_digits(self.datadict['TTFF'])},{get_digits(self.datadict['Avg.TTF'])},{self.datadict['UVs']},{self.datadict['ErrorsOrGF']},{self.datadict['TOs']},{self.datadict['Avg.HDOP(x10)']}\n''')
 
     def order_files(self):
@@ -212,14 +212,14 @@ class Tag_Data():
         filename_csv = self.date_first_timestamp+'-'+str(self.id)+'.csv'
         try:
             ordering = f"{self.date_first_timestamp}/"
-            newpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), ordering)
+            newpath = os.path.join(self.rootpath, ordering)
             if not os.path.exists(newpath):
                 os.makedirs(newpath)
-            os.rename('test_log_temp.txt', os.path.join(ordering, filename_log))
-            os.rename('test_data_temp.csv', os.path.join(ordering, filename_csv))
+            os.rename('test_log_temp.txt', os.path.join(newpath, filename_log))
+            os.rename('test_data_temp.csv', os.path.join(newpath, filename_csv))
         except:
-            print(f'{os.rename('test_log_temp.txt', os.path.join(ordering, filename_log))}')
-            print(f'{os.rename('test_log_temp.txt', os.path.join(ordering, filename_csv))}')
+            print(f"{os.rename('test_log_temp.txt', os.path.join(newpath, filename_log))}")
+            print(f"{os.rename('test_log_temp.txt', os.path.join(newpath, filename_csv))}")
             print("\nThese files are already existing, please delete them if data was currupted or if you want to overwrite content")
 
 if __name__ == '__main__':
